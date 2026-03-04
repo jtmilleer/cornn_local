@@ -101,28 +101,11 @@ pip install --upgrade pip
 pip install --upgrade setuptools
 bash install/pip.sh
 pip install nibabel # wasn't installed originally
+pip install tqdm # these 2 were also not installed originally
+pip install dipy
 deactivate
 cd /
 
 # Clean up
 rm -r /installers
-:"
-# MRTrix3
-export PATH="/apps/mrtrix3/bin:$PATH"
 
-# FSL
-FSLDIR=/apps/fsl
-. ${FSLDIR}/etc/fslconf/fsl.sh
-PATH=${FSLDIR}/bin:${PATH}
-export FSLDIR PATH
-
-# ANTs
-export ANTSPATH=/apps/ants/bin/
-export PATH=${ANTSPATH}:$PATH
-
-# CUDA
-export CPATH="/usr/local/cuda/include:$CPATH"
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-export CUDA_HOME="/usr/local/cuda"
-"
