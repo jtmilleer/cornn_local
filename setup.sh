@@ -98,6 +98,7 @@ pip3 install wheel
 pip install --upgrade pip
 pip install --upgrade setuptools
 bash install/pip.sh
+pip install nibabel # wasn't installed originally
 deactivate
 cd /
 
