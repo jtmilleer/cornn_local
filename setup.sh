@@ -1,5 +1,7 @@
 #!/bin/bash
 
+THREADS=${1:-1}
+echo "Running build with $THREADS core(s)..."
 
 cd /
 
@@ -23,7 +25,7 @@ git clone https://github.com/MRtrix3/mrtrix3.git
 cd mrtrix3
 git checkout 3.0.3
 ./configure
-./build
+./build -j $THREADS
 cd /
 
 # Install FSL
@@ -43,7 +45,7 @@ wget https://github.com/Kitware/CMake/releases/download/v3.23.0-rc2/cmake-3.23.0
 tar -xf cmake-3.23.0-rc2.tar.gz
 cd cmake-3.23.0-rc2/
 ./bootstrap
-make
+make -j $THREADS
 make install
 cd /
 # ANTS
@@ -55,7 +57,7 @@ git checkout efa80e3f582d78733724c29847b18f3311a66b54
 mkdir ants_build
 cd ants_build
 cmake /installers/ants_installer/ANTs -DCMAKE_INSTALL_PREFIX=/apps/ants
-make 2>&1 | tee build.log
+make -j $THREADS 2>&1 | tee build.log
 cd ANTS-build
 make install 2>&1 | tee install.log
 cd /
