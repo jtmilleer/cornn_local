@@ -12,7 +12,7 @@ building cornn_tractography local
 or 
 `./setup.sh $(nproc)` to use all threads
 
-Note: it does not actually work at the moment
+Note: multithreading does not actually work at the moment
 
 ## TODO
 mrconvert build isn't finishing, need to run ./build in /apps/mtrix3 after ./setup.sh (?)
