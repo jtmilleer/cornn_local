@@ -16,6 +16,8 @@ Note: multithreading does not actually work at the moment
 
 ## TODO
 mrconvert build isn't finishing, need to run ./build in /apps/mtrix3 after ./setup.sh (?)
+
+fsl installer is complaining that /apps/fsl already exists. Not a big deal as it should be empty when it gets overwritten, but something to look at
 ## Fixed
 cmake multithreading in shell script?
 is nibabel being pip installed with setup
