@@ -19,7 +19,7 @@ apt-get -y install xvfb
 apt-get -y install ghostscript
 
 # Install MRTrix3
-apt-get -y install git g++ python python-numpy libeigen3-dev zlib1g-dev libqt4-opengl-dev libgl1-mesa-dev libfftw3-dev libtiff5-dev python3-distutils
+apt-get -y install git g++ python3 python-is-python3 python-numpy libeigen3-dev zlib1g-dev libqt4-opengl-dev libgl1-mesa-dev libfftw3-dev libtiff5-dev python3-distutils
 cd /apps
 git clone https://github.com/MRtrix3/mrtrix3.git
 cd mrtrix3
