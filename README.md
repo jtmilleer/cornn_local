@@ -9,7 +9,7 @@ building cornn_tractography local
 	docker build -t cornn_scripts .
 # Running the docker
 	docker run --rm \
-	   -v /tmp:tmp \
+	   -v /tmp:/tmp \
 	   cornn_scrips [num_threads_for_build] [/path/to/.nii/] [/path/to/cornn/out] 
 
 
