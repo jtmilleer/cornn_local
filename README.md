@@ -4,6 +4,7 @@ building cornn_tractography local
 
 # Setup
 	git clone https://github.com/jtmilleer/cornn_local.git
+	cd cornn_local
 	git switch docker_port
 	docker build -t cornn_scripts .
 # Running the docker
