@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY scripts/ ./scripts/
 
-RUN chmod +x ./scripts/setup.sh
+RUN chmod +x ./scripts/entrypoint.sh
 
-CMD["./scripts/setup.sh"]
+
+ENTRYPOINT ["./scripts/entrypoint.sh"]
