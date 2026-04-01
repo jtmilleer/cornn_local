@@ -1,7 +1,10 @@
 # cornn_local
 building cornn_tractography local
 
+
 # Setup
+NEEDS UBUNTU 18.04
+
     git clone https://github.com/jtmilleer/cornn_local.git`
     cd cornn_local 
     ./setup.sh 
