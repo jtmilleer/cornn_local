@@ -6,11 +6,16 @@ building cornn_tractography local
 	git clone https://github.com/jtmilleer/cornn_local.git
 	cd cornn_local
 	git switch docker_port
-	docker build -t cornn_scripts .
+	docker build --network=host -t cornn_local .
 # Running the docker
-	docker run --rm \
-	   -v /tmp:/tmp \
-	   cornn_scrips [num_threads_for_build] [/path/to/.nii/] [/path/to/cornn/out] 
+	docker run -it --network=host \
+	  -v /nas4321:/nas4321 \
+	  -v $(pwd):/app \
+	  --user <your_uid>:<your_gid> \
+	  --group-add <nas_group_id> \
+	  -e HOME=/app \
+	  cornn_local \
+	  [/path/to/t1.nii] [/path/to/output.trk] [num_threads]
 
 
 Note: multithreading may not work?
