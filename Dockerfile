@@ -23,6 +23,9 @@ WORKDIR /app
 
 COPY scripts/ ./scripts/
 
-RUN chmod +x ./scripts/entrypoint.sh
+RUN chmod +x ./scripts/entrypoint.sh ./scripts/setup.sh
+
+# Run setup during build as root with 8 threads
+RUN ./scripts/setup.sh 8
 
 ENTRYPOINT ["./scripts/entrypoint.sh"]
