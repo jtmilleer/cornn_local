@@ -16,7 +16,6 @@ Run these on the host machine:
 # Setup
 	git clone https://github.com/jtmilleer/cornn_local.git
 	cd cornn_local
-	git switch docker_port
 	docker build --network=host -t cornn_local .
 
 # Generate Slant
