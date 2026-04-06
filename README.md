@@ -1,5 +1,5 @@
 # cornn_local
-building cornn_tractography local
+Building cornn_tractography local
 
 
 # Setup
@@ -33,5 +33,5 @@ building cornn_tractography local
 	  --wml [/path/to/wml_output]
 
 ## References
-https://github.com/MASILab/WM_learning_release
-https://github.com/MASILab/cornn_tractography
+	https://github.com/MASILab/WM_learning_release
+	https://github.com/MASILab/cornn_tractography
