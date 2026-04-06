@@ -1,6 +1,17 @@
 # cornn_local
 Building cornn_tractography local
 
+## Prerequisites
+- Docker installed
+- NVIDIA GPU (recommended)
+- Access to the johnsonhj_research NAS group
+
+## Getting your user IDs (needed for NAS access)
+Run these on the host machine:
+
+	id
+	getent group johnsonhj_research
+
 
 # Setup
 	git clone https://github.com/jtmilleer/cornn_local.git
@@ -9,6 +20,8 @@ Building cornn_tractography local
 	docker build --network=host -t cornn_local .
 
 # Generate Slant
+SLANT performs whole brain segmentation and must be run on your T1 file first.
+
 	mkdir -p slant_input slant_output
 	cp /path/to/T1.nii slant_input/
 	docker pull masidocker/public:deep_brain_seg_v1_1_0_CPU
@@ -17,6 +30,11 @@ Building cornn_tractography local
 	  -v $(pwd)/slant_output:/OUTPUTS \
 	  masidocker/public:deep_brain_seg_v1_1_0_CPU \
 	  /extra/run_deep_brain_seg.sh
+
+Output will be in `slant_output/FinalResult/`.
+
+# Generate WML output (required before running CoRNN)
+WML TractSeg is currently blocked — waiting on source code from MASI Lab to convert to Docker. See TODO.
 	  
 # Running the docker
 	docker run -it --network=host \
@@ -31,6 +49,9 @@ Building cornn_tractography local
 	  [num_threads] \
 	  --slant [/path/to/slant_output/FinalResult] \
 	  --wml [/path/to/wml_output]
+
+## TODO
+- WML TractSeg Docker conversion needed — currently only available as Singularity image
 
 ## References
 https://github.com/MASILab/cornn_tractography  
