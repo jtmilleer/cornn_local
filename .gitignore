@@ -1,0 +1,4 @@
+.cache/
+.local/
+.bash_history
+.wget-hsts
