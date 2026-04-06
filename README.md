@@ -1,5 +1,5 @@
 # cornn_local
-Building cornn_tractography local
+Building cornn_tractography locally
 
 ## Prerequisites
 - Docker installed
