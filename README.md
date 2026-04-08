@@ -51,6 +51,7 @@ WML TractSeg is currently blocked — waiting on source code from MASI Lab to co
 
 ## TODO
 - WML TractSeg Docker conversion needed — currently only available as Singularity image
+- git repo is ~100MB, pretty sure it's due to .cache and .local folders still being tracked, even though they're not in present version. Can this be reduced?
 
 ## References
 https://github.com/MASILab/cornn_tractography  
