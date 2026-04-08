@@ -57,3 +57,14 @@ WML TractSeg is currently blocked — waiting on source code from MASI Lab to co
 https://github.com/MASILab/cornn_tractography  
 https://github.com/MASILab/WM_learning_release  
 https://github.com/MASILab/SLANTbrainSeg  
+
+## WML without singularity
+https://github.com/jtmilleer/WML_local/tree/main 
+
+Now that singulary is on dendrite, I was able to run `singularity inspect --deffile tractSeg.simg` to see the build file. 
+
+With a series of `singularity exec tractSeg.simg cp -r /path/to/wanted/directory /path/to/destination` commands, I was able to extract file from it. They can be seen as `_extracted` directores in the repo.
+
+The readme in the repo talks about a few issues i've been running into. I don't have time to fix them at the moment, it's an ongoing process. Henry, if you would like to work on it, you are welcome to. You should be able to push to it. 
+
+
