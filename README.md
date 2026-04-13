@@ -11,6 +11,7 @@ Run these on the host machine:
 
 	id
 	getent group johnsonhj_research
+	
 
 
 # Setup
@@ -40,7 +41,7 @@ WML TractSeg is currently blocked — waiting on source code from MASI Lab to co
 	docker run -it --network=host \
 	  -v /nas4321:/nas4321 \
 	  -v $(pwd):/app \
-	  --user <uid>:<gid> \
+	  --user $(id -u):$(id -g) \
 	  --group-add <nas_group_id> \
 	  -e HOME=/app \
 	  cornn_local \
