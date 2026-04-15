@@ -23,16 +23,20 @@ Note: THREADS defaults to 1 if not passed in
 # Generate Slant
 SLANT performs whole brain segmentation and must be run on your T1 file first.
 
-	mkdir -p slant_input slant_output
+	mkdir -p slant_input slant_output slant_home
+	touch slant_home/.bashrc
 	cp /path/to/T1.nii slant_input/
 	docker pull masidocker/public:deep_brain_seg_v1_1_0_CPU
 	docker run -it --rm --network=host \
-	  --user $(id -u):$(id -g) \
-	  -e HOME=/tmp \
-	  -v $(pwd)/slant_input:/INPUTS/ \
-	  -v $(pwd)/slant_output:/OUTPUTS \
-	  masidocker/public:deep_brain_seg_v1_1_0_CPU \
-	  /extra/run_deep_brain_seg.sh
+  		--user $(id -u):$(id -g) \
+  		-e HOME=/homedir \
+  		-v $HOME/slant_home:/homedir \
+  		-v $HOME/slant_input:/INPUTS/ \
+  		-v $HOME/slant_output:/OUTPUTS \
+  		masidocker/public:deep_brain_seg_v1_1_0_CPU \
+  		/extra/run_deep_brain_seg.sh
+
+
 
 Output will be in `slant_output/FinalResult/`.
 
