@@ -25,7 +25,7 @@ SLANT performs whole brain segmentation and must be run on your T1 file first.
 
 	mkdir -p slant_input slant_output slant_home
 	touch slant_home/.bashrc
-	cp /path/to/T1.nii slant_input/
+	cp /path/to/T1.nii.gz slant_input/
 	docker pull masidocker/public:deep_brain_seg_v1_1_0_CPU
 	docker run -it --rm --network=host \
   		--user $(id -u):$(id -g) \
