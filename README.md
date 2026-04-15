@@ -17,7 +17,8 @@ Run these on the host machine:
 # Setup
 	git clone https://github.com/jtmilleer/cornn_local.git
 	cd cornn_local
-	docker build --network=host -t cornn_local .
+	docker build --network=host -t cornn_local --build-arg THREADS=num_threds_for_build .
+Note: THREADS defaults to 1 if not passed in
 
 # Generate Slant
 SLANT performs whole brain segmentation and must be run on your T1 file first.
